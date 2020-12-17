@@ -24,4 +24,12 @@ public class JSONSimpleTest {
 
     assertEquals(expObj, obj.toJSONString());
   }
+  @Test
+  public void escapingJsonTest() {
+
+    JSONObject obj = new JSONObject();
+    String text = "Text with special character /\"\'\b\f\t\r\n.";
+    String expected = "Text with special character \\/\\\"'\\b\\f\\t\\r\\n.";
+    assertEquals(expected, obj.escape(text));
+  }
 }
