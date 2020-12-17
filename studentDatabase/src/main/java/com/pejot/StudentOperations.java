@@ -20,4 +20,12 @@ public class StudentOperations {
       return (float) (tuitionBalance * 0.5);
     }
   }
+  public int payTuitionForTest(int tuitionBalance,int payment) {
+    tuitionBalance = tuitionBalance - payment;
+    return tuitionBalance;
+  }
+  public String  studentFullName(String name,String lastName) {
+    String fullName = name + " " + lastName;
+    return fullName;
+  }
 }

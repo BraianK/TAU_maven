@@ -52,6 +52,7 @@ public class Student {
   // View balance
   public void viewBalance() {
     System.out.println("Twoje saldo wynosi: " + tuitionBalance);
+
   }
   // Pay tuition
   public void payTuition() {

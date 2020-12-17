@@ -44,4 +44,18 @@ public class StudentOperationsTest {
     double expected = 180;
     assertNotSame(expected, result);
   }
+  @Test
+  public void payTuitionForTestTest() {
+      int tuitionBalance = 600;
+      int payment  = 300;
+      int tmp = opr.payTuitionForTest(tuitionBalance, payment);
+    assertEquals(300, tmp);
+  }
+  @Test
+  public void studentFullNameTest() {
+    String name = "Braian";
+    String lastName = "Kreft";
+    String tmp = opr.studentFullName(name, lastName);
+    assertEquals("Braian Kreft", tmp);
+  }
 }
