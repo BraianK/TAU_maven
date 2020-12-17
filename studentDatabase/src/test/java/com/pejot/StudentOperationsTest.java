@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -61,16 +62,40 @@ public class StudentOperationsTest {
   }
   @Test
   public void studentGradesTest() {
-    String firstGrade = "Braian";
-    String secondGrade = "Kreft";
+    String firstGrade = "1";
+    String secondGrade = "2";
     List tmp = opr.studentGrades(firstGrade, secondGrade);
-    assertEquals("[Braian, Kreft]", tmp.toString());
+    assertEquals("[1, 2]", tmp.toString());
   }
   @Test
-  public void firstElementstudentGradesTest() {
-    String firstGrade = "Braian";
-    String secondGrade = "Kreft";
+  public void firstElementStudentGradesTest() {
+    String firstGrade = "1";
+    String secondGrade = "2";
     List tmp = opr.studentGrades(firstGrade, secondGrade);
-    assertEquals("Braian", tmp.get(0).toString());
+    assertEquals("1", tmp.get(0).toString());
+  }
+  @Test
+  public void studentSortTest() {
+    String firstElement = "3";
+    String secondElement = "1";
+    String thirdElement = "2";
+    List tmp = opr.studentSort(firstElement, secondElement, thirdElement);
+    assertEquals("[1, 2, 3]", tmp.toString());
+  }
+  @Test
+  public void studentGradeFindMinTest() {
+    int firstElement = 3;
+    int secondElement = 1;
+    int thirdElement = 2;
+    int tmp = opr.studentGradeFindtMin(firstElement, secondElement, thirdElement);
+    assertEquals(1, tmp);
+  }
+  @Test
+  public void studentGradeFindMaxTest() {
+    int firstElement = 3;
+    int secondElement = 1;
+    int thirdElement = 2;
+    int tmp = opr.studentGradeFindtMax(firstElement, secondElement, thirdElement);
+    assertEquals(3, tmp);
   }
 }

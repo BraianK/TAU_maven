@@ -1,6 +1,7 @@
 package com.pejot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StudentOperations {
@@ -36,5 +37,32 @@ public class StudentOperations {
     grades.add(firstGrade);
     grades.add(secondGrade);
     return grades;
+  }
+  public List studentSort(String firstElement,String secondElement, String thirdElement) {
+    List<String> list = new ArrayList<>();
+
+    list.add(firstElement);
+    list.add(secondElement);
+    list.add(thirdElement);
+    Collections.sort(list);
+    return list;
+  }
+  public int studentGradeFindtMin(int firstElement,int secondElement, int thirdElement) {
+    List<Integer> list = new ArrayList<>();
+
+    list.add(firstElement);
+    list.add(secondElement);
+    list.add(thirdElement);
+    int min = Collections.min(list);
+    return min;
+  }
+  public int studentGradeFindtMax(int firstElement,int secondElement, int thirdElement) {
+    List<Integer> list = new ArrayList<>();
+
+    list.add(firstElement);
+    list.add(secondElement);
+    list.add(thirdElement);
+    int max = Collections.max(list);
+    return max;
   }
 }
