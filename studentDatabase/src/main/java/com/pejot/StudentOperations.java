@@ -1,5 +1,8 @@
 package com.pejot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StudentOperations {
   public float discount(float tuitionBalance) {
     return (float) (tuitionBalance * 0.3);
@@ -27,5 +30,11 @@ public class StudentOperations {
   public String  studentFullName(String name,String lastName) {
     String fullName = name + " " + lastName;
     return fullName;
+  }
+  public List studentGrades(String firstGrade,String secondGrade) {
+    List grades = new ArrayList();
+    grades.add(firstGrade);
+    grades.add(secondGrade);
+    return grades;
   }
 }

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 public class StudentOperationsTest {
@@ -46,9 +47,9 @@ public class StudentOperationsTest {
   }
   @Test
   public void payTuitionForTestTest() {
-      int tuitionBalance = 600;
-      int payment  = 300;
-      int tmp = opr.payTuitionForTest(tuitionBalance, payment);
+    int tuitionBalance = 600;
+    int payment = 300;
+    int tmp = opr.payTuitionForTest(tuitionBalance, payment);
     assertEquals(300, tmp);
   }
   @Test
@@ -57,5 +58,19 @@ public class StudentOperationsTest {
     String lastName = "Kreft";
     String tmp = opr.studentFullName(name, lastName);
     assertEquals("Braian Kreft", tmp);
+  }
+  @Test
+  public void studentGradesTest() {
+    String firstGrade = "Braian";
+    String secondGrade = "Kreft";
+    List tmp = opr.studentGrades(firstGrade, secondGrade);
+    assertEquals("[Braian, Kreft]", tmp.toString());
+  }
+  @Test
+  public void firstElementstudentGradesTest() {
+    String firstGrade = "Braian";
+    String secondGrade = "Kreft";
+    List tmp = opr.studentGrades(firstGrade, secondGrade);
+    assertEquals("Braian", tmp.get(0).toString());
   }
 }
