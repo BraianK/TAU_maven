@@ -17,4 +17,15 @@ public class CommonMathTest {
 
     assertEquals(1, f.getCount("test"));
   }
+  @Test
+  public void CaseInsensitiveFrequencyTest() {
+
+    Frequency f = new Frequency(String.CASE_INSENSITIVE_ORDER);
+    f.addValue("test1");
+    f.addValue("z1");
+    f.addValue("oN1sadase");
+    f.addValue("Z1");
+
+    assertEquals(2, f.getCount("z1"));
+  }
 }
