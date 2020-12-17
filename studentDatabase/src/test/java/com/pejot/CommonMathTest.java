@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class CommonMathTest {
   @Test
-  public void FrequencyTest() {
+  public void caseSensitiveFrequencyTest() {
 
     Frequency f = new Frequency();
     f.addValue("test");
@@ -18,7 +18,7 @@ public class CommonMathTest {
     assertEquals(1, f.getCount("test"));
   }
   @Test
-  public void CaseInsensitiveFrequencyTest() {
+  public void caseInsensitiveFrequencyTest() {
 
     Frequency f = new Frequency(String.CASE_INSENSITIVE_ORDER);
     f.addValue("test1");
