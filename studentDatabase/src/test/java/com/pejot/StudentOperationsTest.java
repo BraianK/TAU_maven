@@ -3,8 +3,9 @@ package com.pejot;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -98,4 +99,13 @@ public class StudentOperationsTest {
     int tmp = opr.studentGradeFindtMax(firstElement, secondElement, thirdElement);
     assertEquals(3, tmp);
   }
+  @Test
+  public void testDiscountMockTest() {
+    StudentOperations opr = mock(StudentOperations.class);
+    when(opr.discount(600)).thenReturn((float) 180);
+    float discount = opr.discount(600);
+    assertEquals(180, discount);
+  }
+
+
 }
