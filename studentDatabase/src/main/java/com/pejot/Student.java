@@ -1,5 +1,7 @@
 package com.pejot;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -34,6 +36,11 @@ public class Student {
 
 
   }
+  public String getStudentID() {
+    return "1";
+
+
+  }
   // Enroll a courses
   public void enroll() {
     // Get inside a loop, user hits 0
@@ -54,6 +61,10 @@ public class Student {
     System.out.println("Twoje saldo wynosi: " + tuitionBalance);
 
   }
+  public int returnBalance() {
+    return 123;
+
+  }
   // Pay tuition
   public void payTuition() {
     viewBalance();
@@ -72,7 +83,12 @@ public class Student {
     viewBalance();
   }
 
-
+  public List getStudentGrades() {
+    List grades = new ArrayList();
+    grades.add("1");
+    grades.add("2");
+    return grades;
+  }
 
   // Show status
   public String toString() {

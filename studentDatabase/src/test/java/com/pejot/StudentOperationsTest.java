@@ -128,5 +128,28 @@ public class StudentOperationsTest {
     List tmp = opr.studentGrades(firstGrade, secondGrade);
     assertEquals("[1, 2]", tmp.toString());
   }
-
+  @Test
+  public void returnBalanceMockTest() {
+    Student student = mock(Student.class);
+    when(student.returnBalance()).thenReturn(123);
+    int balance = student.returnBalance();
+    assertEquals(123, balance);
+  }
+  @Test
+  public void viewStudentIdMockTest() {
+    Student student = mock(Student.class);
+    when(student.getStudentID()).thenReturn("1");
+    String id= student.getStudentID();
+    assertEquals("1", id);
+  }
+  @Test
+  public void viewStudentGradesMockTest() {
+    Student student = mock(Student.class);
+    List list = new ArrayList();
+    list.add("1");
+    list.add("2");
+    when(student.getStudentGrades()).thenReturn(list);
+    List tmp = student.getStudentGrades();
+    assertEquals("[1, 2]", tmp.toString());
+  }
 }
