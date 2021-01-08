@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -106,6 +107,26 @@ public class StudentOperationsTest {
     float discount = opr.discount(600);
     assertEquals(180, discount);
   }
-
+  @Test
+  public void studentFullNameMockTest() {
+    StudentOperations opr = mock(StudentOperations.class);
+    String name = "Braian";
+    String lastName = "Kreft";
+    when(opr.studentFullName(name, lastName)).thenReturn("Braian Kreft");
+    String tmp = opr.studentFullName(name, lastName);
+    assertEquals("Braian Kreft", tmp);
+  }
+  @Test
+  public void studentGradesMockTest() {
+    StudentOperations opr = mock(StudentOperations.class);
+    String firstGrade = "1";
+    String secondGrade = "2";
+    List list = new ArrayList();
+    list.add("1");
+    list.add("2");
+    when(opr.studentGrades(firstGrade, secondGrade)).thenReturn(list);
+    List tmp = opr.studentGrades(firstGrade, secondGrade);
+    assertEquals("[1, 2]", tmp.toString());
+  }
 
 }
